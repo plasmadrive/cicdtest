@@ -41,7 +41,7 @@ public class OwnerControllerTest {
                 .get("/owners")
                 .accept(MediaType.APPLICATION_JSON);
 
-        assertEquals (ownerService.findAllOwners().size(),1);
+        assertEquals (1,ownerService.findAllOwners().size());
         assertEquals(ownerService.findAllOwners().get(0), new Owner(1,"Gareth","Badenhorst"));
         List<Owner> owners = ownerService.findAllOwners();
 

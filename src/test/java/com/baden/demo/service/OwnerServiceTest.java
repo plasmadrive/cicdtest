@@ -35,7 +35,7 @@ class OwnerServiceTest {
         )));
 
         List<Owner> owners = ownerService.findAllOwners();
-        assertEquals (owners.size(), 2);
+        assertEquals (2, owners.size());
         assertEquals(owners.get(0), new Owner(1,"Gareth","Badenhorst"));
     }
 
@@ -46,7 +46,7 @@ class OwnerServiceTest {
               )));
 
         List<Owner> owners = ownerService.findAllOwners();
-        assertEquals (owners.size(), 1);
+        assertEquals (1,owners.size());
         assertEquals(owners.get(0), new Owner(1,"Gareth","Badenhorst"));
     }
 
@@ -56,7 +56,7 @@ class OwnerServiceTest {
                       )));
 
         List<Owner> owners = ownerService.findAllOwners();
-        assertEquals (owners.size(), 0);
+        assertEquals (0,owners.size());
 
     }
 }
