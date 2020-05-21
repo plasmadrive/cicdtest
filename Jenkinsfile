@@ -1,9 +1,22 @@
 pipeline {
-    agent { docker { image 'maven:3.3.3' } }
+
+    agent any
+    tools {
+    	  maven 'Maven'
+    }
+    
     stages {
+
+    	stage('initialize') {
+	    steps {
+	    sh '''
+	        echo "PATH = $(PATH)"
+		echo "M2_HOME = $(M2_HOME)"
+	       '''
+	}
         stage('build') {
             steps {
-                sh 'mvn --version'
+                sh 'mvn clean package'
             }
         }
     }
